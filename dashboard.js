@@ -1,5 +1,5 @@
 // 🔗 URL actualizada de tu Web App (API de datos)
-const DATA_API_URL = "https://script.google.com/macros/s/AKfycbxYDKWAG5TEV9_U_FgNBWpvD8VMpoFqGsDC1fdlNtataVZZwg1ymYaJjdkRx0JcmAoC/exec";
+const DATA_API_URL = "https://script.google.com/macros/s/AKfycbxesyUkZre_XktqG5r9cMVTTbEdhUuz0YGa2tIK7f1sZf5iOkN_4JBFpz60dCGcCZBA/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   cargarDatos("candidatos", "candidatos");
