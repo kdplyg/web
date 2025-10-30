@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-  if (typeof DATA_API_URL === 'undefined') {
-    console.error("❌ Olvidaste definir DATA_API_URL en index.html");
-    return;
-  }
+// URL de tu Web App (API de datos)
+const DATA_API_URL = "https://script.google.com/macros/s/AKfycbyec0S4Ht5cChzD3ZPLGhR0ALug8gQf7dWMi4gfwJokU659aT4e7uMW1ZVpmZukR2Qi/exec";
 
+document.addEventListener("DOMContentLoaded", () => {
   cargarDatos("candidatos", "candidatos");
   cargarDatos("proyectos", "proyectos");
 });
 
 async function cargarDatos(sheetKey, elementoId) {
   const contenedor = document.getElementById(elementoId);
+  contenedor.innerHTML = "Cargando...";
+
   try {
     const res = await fetch(`${DATA_API_URL}?sheet=${sheetKey}`);
     const data = await res.json();
 
     if (data.error) {
-      contenedor.innerHTML = `<p class="error">⚠️ ${data.error}</p>`;
+      contenedor.innerHTML = `<p class="error">⚠️ Error: ${data.error}</p>`;
       return;
     }
 
@@ -24,19 +24,28 @@ async function cargarDatos(sheetKey, elementoId) {
       return;
     }
 
-    const limite = 5;
-    const items = data.slice(0, limite).map(item => {
-      if (sheetKey === "candidatos") {
-        return `<div class="card">${item.Nombre || item.nombre || '—'} — ${item.Estado || 'Pendiente'}</div>`;
-      } else if (sheetKey === "proyectos") {
-        return `<div class="card">${item.Nombre || item.Título || item.Concepto || 'Proyecto'}</div>`;
-      }
-      return `<div class="card">${JSON.stringify(item)}</div>`;
-    }).join("");
+    let html = "";
+    const limite = Math.min(5, data.length);
 
-    contenedor.innerHTML = items;
+    for (let i = 0; i < limite; i++) {
+      const item = data[i];
+
+      if (sheetKey === "candidatos") {
+        // Ajustado a los encabezados reales del formulario de Google
+        const nombre = item["Nombre y Apellidos"] || item.Nombre || "—";
+        const email = item["Correo electrónico"] || item.Email || "";
+        const estado = item.Estado || "Pendiente";
+        html += `<div class="card"><strong>${nombre}</strong> — ${estado}<br><small>${email}</small></div>`;
+      } 
+      else if (sheetKey === "proyectos") {
+        const nombre = item.Nombre || item.Concepto || item.Título || "Proyecto sin nombre";
+        html += `<div class="card">${nombre}</div>`;
+      }
+    }
+
+    contenedor.innerHTML = html || "<p>Sin datos para mostrar.</p>";
   } catch (e) {
-    contenedor.innerHTML = `<p class="error">⚠️ Error al cargar ${sheetKey}</p>`;
-    console.error(e);
+    contenedor.innerHTML = `<p class="error">⚠️ Error de conexión.</p>`;
+    console.error("Error al cargar datos:", e);
   }
 }
