@@ -3,39 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KDP LYG — Dashboard Operativo</title>
+  <title>KdpLyg — Sistema Operativo Central</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>🚀 KDP LY G — Sistema Operativo Central</h1>
-    <p>Dashboard de gestión de candidatos, acuerdos y proyectos editoriales</p>
+    <h1>KdpLyg</h1>
+    <p>Sistema operativo central del negocio</p>
   </header>
 
   <main>
-    <!-- Accesos directos -->
     <section class="apps">
-      <h2>🔗 Aplicaciones Operativas</h2>
-      <a href="https://acuerdos.kdplyg.org" class="btn">📄 Acuerdos Legales</a>
-      <a href="https://entrevistas.kdplyg.org" class="btn">📅 Agendar Entrevista</a>
-      <a href="https://proyectos.kdplyg.org" class="btn">📚 Gestión de Proyectos</a>
-      <a href="https://forms.gle/bXfsLo81vEFu43ZA6" class="btn">📝 Postulación de Candidatos</a>
+      <h2>Aplicaciones</h2>
+      <div class="btn-grid">
+        <a href="https://acuerdos.kdplyg.org" class="btn">Acuerdos</a>
+        <a href="https://entrevistas.kdplyg.org" class="btn">Entrevistas</a>
+        <a href="https://proyectos.kdplyg.org" class="btn">Proyectos</a>
+        <a href="https://forms.gle/bXfsLo81vEFu43ZA6" class="btn">Postulación</a>
+      </div>
     </section>
 
-    <!-- Datos dinámicos -->
     <section class="data">
-      <h2>📊 Últimos Candidatos</h2>
+      <h2>Últimos candidatos</h2>
       <div id="candidatos">Cargando...</div>
     </section>
 
     <section class="data">
-      <h2>🧩 Proyectos Activos</h2>
+      <h2>Proyectos activos</h2>
       <div id="proyectos">Cargando...</div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 KDP LYG — Sistema centralizado</p>
+    <p>© KdpLyg — Sistema centralizado</p>
   </footer>
 
   <script src="dashboard.js"></script>
