@@ -7,13 +7,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #f5f7fa;
   color: #333;
-  line-height: 1.6;
-  padding: 16px;
+  line-height: 1;
+  padding: 4px;
 }
 header {
   text-align: center;
-  margin-bottom: 28px;
-  padding: 16px 0;
+  margin-bottom: 8px;
+  padding: 4px 0;
 }
 header h1 {
   font-size: 1.8rem;
@@ -24,9 +24,9 @@ main {
   margin: 0 auto;
 }
 h2 {
-  margin: 24px 0 16px;
+  margin: 4px 0 6px;
   color: #222;
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 .apps, .data {
   background: white;
@@ -38,8 +38,8 @@ h2 {
 .btn {
   display: block;
   width: 100%;
-  padding: 16px;
-  margin: 10px 0;
+  padding: 6px;
+  margin: 4px 0;
   background: #007bff;
   color: white;
   text-decoration: none;
@@ -54,8 +54,8 @@ h2 {
   transform: translateY(-1px);
 }
 .card {
-  padding: 12px;
-  margin: 10px 0;
+  padding: 2px;
+  margin: 2px 0;
   background: #f8f9ff;
   border-left: 4px solid #007bff;
   border-radius: 6px;
@@ -71,7 +71,7 @@ h2 {
 footer {
   text-align: center;
   margin-top: 32px;
-  padding: 16px;
+  padding: 2px;
   color: #666;
   font-size: 0.9rem;
 }
