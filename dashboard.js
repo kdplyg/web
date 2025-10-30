@@ -1,5 +1,5 @@
-// URL de tu Web App (API de datos)
-const DATA_API_URL = "https://script.google.com/macros/s/AKfycbyec0S4Ht5cChzD3ZPLGhR0ALug8gQf7dWMi4gfwJokU659aT4e7uMW1ZVpmZukR2Qi/exec";
+// 🔗 URL actualizada de tu Web App (API de datos)
+const DATA_API_URL = "https://script.google.com/macros/s/AKfycbxYDKWAG5TEV9_U_FgNBWpvD8VMpoFqGsDC1fdlNtataVZZwg1ymYaJjdkRx0JcmAoC/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   cargarDatos("candidatos", "candidatos");
@@ -31,7 +31,6 @@ async function cargarDatos(sheetKey, elementoId) {
       const item = data[i];
 
       if (sheetKey === "candidatos") {
-        // Ajustado a los encabezados reales del formulario de Google
         const nombre = item["Nombre y Apellidos"] || item.Nombre || "—";
         const email = item["Correo electrónico"] || item.Email || "";
         const estado = item.Estado || "Pendiente";
