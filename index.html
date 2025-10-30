@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KDP LY G — Dashboard Operativo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 KDP LY G — Sistema Operativo Central</h1>
+    <p>Dashboard de gestión de candidatos, acuerdos y proyectos editoriales</p>
+  </header>
+
+  <main>
+    <!-- Accesos directos a tus Web Apps -->
+    <section class="apps">
+      <h2>🔗 Aplicaciones Operativas</h2>
+      <a href="https://acuerdos.kdplyg.org" class="btn">📄 Acuerdos Legales</a>
+      <a href="https://entrevistas.kdplyg.org" class="btn">📅 Agendar Entrevista</a>
+      <a href="https://proyectos.kdplyg.org" class="btn">📚 Gestión de Proyectos</a>
+      <a href="https://forms.gle/bXfsLo81vEFu43ZA6" class="btn">📝 Postulación de Candidatos</a>
+    </section>
+
+    <!-- Datos dinámicos -->
+    <section class="data">
+      <h2>📊 Últimos Candidatos</h2>
+      <div id="candidatos">Cargando...</div>
+    </section>
+
+    <section class="data">
+      <h2>🧩 Proyectos Activos</h2>
+      <div id="proyectos">Cargando...</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 KDP LY G — Sistema centralizado en <code>kdplyg.org</code></p>
+  </footer>
+
+  <script>
+    // ⚠️ PEGA AQUÍ TU URL DE LA NUEVA WEB APP (la del Paso 1)
+    const DATA_API_URL = "https://script.google.com/macros/s/AKfycbxYz.../exec";
+  </script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
